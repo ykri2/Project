@@ -1,0 +1,444 @@
+@charset "UTF-8";
+@import './normalize.css';
+@import url('//fonts.googleapis.com/css?family=Ovo');
+@import url('//fonts.googleapis.com/css?family=Ubuntu+Condensed|Ubuntu+Mono');
+
+
+  
+body {
+    margin: 0;
+}
+  
+
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+.app_component {
+    text-align: center;
+    background-color:rgb(243, 243, 243);
+    height: auto;
+    width: 100%;
+    color: rgba(210, 218, 226,1.0);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+
+    /**             Header wrapper              **/
+    .header_component {
+        width: 100%;
+        height: 210px;
+        padding: 15px;
+        margin: 0 0 10px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(25, 140, 79, 0.7);
+
+        .header_infobox {
+            width: 80%;
+            height: 150 auto;
+
+            .ht {
+                color: #FFFFFF;
+                text-decoration: none;
+                font-family: 'Ubuntu Mono', monospace;
+                font-size: 1em;
+            }
+        }
+    }
+
+
+    /**             Main wrapper              **/
+    .main_component {
+        width: 70%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        /**             Upper box in main component             **/
+        .main_upper_div {
+            margin: 10px 0 10px;
+            padding: 10px 0 10px 0;
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 2.5px;
+            box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.11), 0 5px 15px 0 rgba(0, 0, 0, 0.08);
+            box-sizing: border-box;
+            
+            .main_button_row {
+                width: 100%;
+                height: auto;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                
+                /**             Btn             **/
+                .main_upper_btn {
+                    margin: 15px 5px 15px 5px;
+                    width: 30%;
+                    height: 40px;
+                    background-color:  rgba(53, 112, 97, 0.9);
+                    border: transparent;
+                    border-radius: 2.5px;
+                    box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.11), 0 5px 15px 0 rgba(0, 0, 0, 0.08);
+                    box-sizing: border-box;
+                    cursor: pointer;
+
+                    p {
+                        margin: 10px 0 10px 0;
+                        color: #FFFFFF;
+                        text-decoration: none;
+                        font-family: 'Ubuntu Mono', monospace;
+                        font-size: 0.8em;
+                    }
+                }
+
+                .main_upper_btn:hover {
+                    background-color: #FFFFFF;
+                    
+                    p {
+                        color: rgba(53, 112, 97, 0.9);
+                        font-size: 1em;
+                    }
+                }
+
+                .main_upper_btn:disabled {
+                    cursor: not-allowed;
+                    pointer-events: none;
+                }
+            }
+
+            /**            form component              **/
+            .form_component {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 15px;
+                height: auto;
+                width: 90%;
+
+                .form {
+                    border: 1px solid rgba(180, 180, 180, 0.2);
+                    height: auto;
+                    width: 100%;
+                    padding: 15px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    .form_header {
+                        font-family: 'Ubuntu Condensed', sans-serif;;
+                        font-size: 1.6em;
+                        font-weight: 100;
+                        text-align: center;
+                        color:  rgba(25, 140, 79, 0.9);
+                    }
+
+                    /**             Form input row             **/
+                    .form_row {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 6.4px;
+                        width: 90%; 
+                    
+                        .form_input_div {
+                            margin-top: 1.2%;
+                            height: auto;
+                            width: 50%;
+                            
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            padding: 3px; 
+
+                            .form_label {
+                                padding: 8px;
+                                font-family: 'Ubuntu Condensed', sans-serif;
+                                font-size: 1.1em;
+                                font-weight: 200;
+                                text-align: center;
+                                color:  rgba(53, 112, 97, 0.9);
+                            }
+
+                            .help-block {
+                                margin: 4px 0 10px 0;
+                                width: 80%;
+                                height: auto;
+                                background-color: rgba(187, 44, 44, 0.5);
+                                border-radius: 2.3px;
+                                box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.11), 0 5px 15px 0 rgba(0, 0, 0, 0.08);
+                                padding: 5px 0 5px 0;
+                                color: rgb(246, 232, 232);
+                            }
+                            .form_input {
+                                width: 80%;
+                                height: 50px;
+                                text-align: center;
+                                
+                            }
+                            .form_input_date {
+                                width: 80%;
+                                height: 50px;
+                                text-align: center;
+                                
+                            }
+                        }
+                    }
+
+                    /**             Form btn row             **/
+                    .form_button_row {
+                        margin: 15px 0 10px 0;
+                        padding: 10px;
+                        width: 90%;
+                        height: auto;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: center;
+                    
+                        .form_btn {
+                            margin: 0 5px 0 5px;
+                            border-radius: 2.5px;
+                            width: 50%;
+                            height: 40px;
+                            background-color: rgba(53, 112, 97, 0.9);
+
+                            box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.11), 0 5px 15px 0 rgba(0, 0, 0, 0.08);
+                            box-sizing: border-box;
+
+                            .form_btn_p {
+                                margin: 10px 0 10px 0;
+                                font-family: 'Ubuntu Mono', monospace;
+                                font-size: 1em;
+                                text-align: center;
+                                color: #ffffff;
+                            }
+
+                        }
+
+                        .form_btn:hover {
+                            background-color: #FFFFFF;
+
+                            .form_btn_p {
+                                color:   rgba(53, 112, 97, 0.9);
+                            }
+                        }
+                    
+                    }
+                }
+
+            }
+
+
+        }
+
+        /**             Lower box in main component             **/
+        .main_lower_div {
+            margin: 10px 0 50px 0;
+            padding: 15px 0 15px 0;
+            width: 100%;
+            height: auto;
+            border-radius: 2.5px;
+            box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.11), 0 5px 15px 0 rgba(0, 0, 0, 0.08);
+            box-sizing: border-box;
+
+            .main_lower_p {
+                color: rgba(53, 112, 97, 1.0);
+                text-decoration: none;
+                font-family: 'Ubuntu Mono', monospace;
+                font-size: 0.8em;
+            }
+
+    
+            /**             Wrapper for display components             **/
+            .wrapper {
+                height: auto;
+                width: 100%;
+                margin: auto;
+
+
+                /**             Container information box             **/
+                .information_box {
+                    margin: auto;
+                    padding: 10px;
+                    width: 90%;
+                    height: auto;
+                    border: 1px solid rgba(180, 180, 180, 0.2);
+
+                    .information_box_row {
+                        height: auto;
+                        width: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: center;
+
+                        .information_box_p {
+                            padding: 15px;
+                            font-family: 'Ubuntu Condensed', sans-serif;;
+                            font-size: 1.0em;
+                            font-weight: 200;
+                            text-align: center;
+                            color: rgba(29, 29, 29, 0.8);
+
+                            .ibxp_color_span {
+                                color: rgba(25, 140, 79, 0.9);
+                                font-size: 1.1em;
+                                font-weight: 400;
+                            }
+                        }
+
+                    }
+
+                }
+
+                /**             Graph wrapper              **/
+                .graph_wrapper {
+                    margin: 15px 0 15px 0;
+                    height: auto;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+    
+                    .main_button_row {
+                        width: 100%;
+                        height: auto;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: center;
+                        
+                        .main_upper_btn {
+                            margin: 15px 5px 15px 5px;
+                            width: 20%;
+                            height: 33px;
+                            background-color:  rgba(53, 112, 97, 0.9);
+                            border: transparent;
+                            border-radius: 2.5px;
+                            box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.11), 0 5px 15px 0 rgba(0, 0, 0, 0.08);
+                            box-sizing: border-box;
+                            cursor: pointer;
+        
+                            p {
+                                margin: 5px 0 5px 0;
+                                color: #FFFFFF;
+                                text-decoration: none;
+                                font-family: 'Ubuntu Mono', monospace;
+                                font-size: 0.8em;
+                            }
+                        }
+        
+                        .main_upper_btn:hover {
+                            background-color: #FFFFFF;
+                            
+                            p {
+                                color: rgba(53, 112, 97, 0.9);
+                                font-size: 1em;
+                            }
+                        }
+        
+                        .main_upper_btn:disabled {
+                            cursor: not-allowed;
+                            pointer-events: none;
+                        }
+                    }
+    
+    
+    
+                }
+
+                /**             Table wrapper              **/
+                .table_wrapper {
+                    max-height: 500px;
+                    overflow: scroll;
+                    width: 100%;
+                    margin: 15px 0 15px 0;
+                    
+                    .table {
+                        margin: auto;
+                        width: 80%;
+                        height: auto;
+                    
+                        .table_body {
+                            height: auto;
+                            width:100%;
+
+                            .table_headers {
+                                padding: 5px;
+                                font-family: 'Ubuntu Condensed', sans-serif;;
+                                font-size: 0.9em;
+                                font-weight: 500;
+                                text-align: center;
+                                color: rgba(63, 63, 63, 0.6);
+                            }
+                    
+                            .table_row {
+                                border-bottom: 1px solid rgba(168, 167, 167, 0.7);
+                                padding: 5px;
+                                margin: 0 5px 0 5px;
+                                background-color:  rgba(236, 236, 236, 0.4);
+                                
+                                .table_data {
+                                    
+                                    padding: 5px 4px 5px 4px;
+                                    margin: 3px;
+                    
+                                    .table_data_p {
+                                        font-family: 'Ubuntu Mono', monospace;
+                                        font-size: 0.9em;
+                                        font-weight: 500;
+                                        text-align: center;
+                                        color: rgba(29, 29, 29, 0.8);
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+
+    }
+
+
+    /**             Footer component              **/
+    .footer_component {
+        margin: 10px 0 0 0;
+        padding: 15px;
+        width: 100%;
+        height: 180px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(25, 140, 79, 0.7);
+
+        .footer_text {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-family: 'Ubuntu Mono', monospace;
+            font-size: 0.8em;
+        }
+    }
+}
