@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 const location = require('./config/location')
 
-const NODE_ENV = process.env.NODE_ENV
+const NODE_ENV = "production"
 const PUBLIC_URL = '/annotate/';
 const devMode = NODE_ENV === "production";
 
