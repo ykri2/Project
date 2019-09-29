@@ -260,14 +260,31 @@ body {
             box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.11), 0 5px 15px 0 rgba(0, 0, 0, 0.08);
             box-sizing: border-box;
 
-            .main_lower_p {
-                color: rgba(53, 112, 97, 1.0);
-                text-decoration: none;
-                font-family: 'Ubuntu Mono', monospace;
-                font-size: 0.8em;
+            .loading_svg_container {
+                width: 100%;
+                height: auto;
+                margin: 210px 0 210px 0;
+                text-align: center;
+
             }
 
-    
+            .main_lower_empty_wrapper {
+                margin: 15px 0 15px 0;
+                height: auto;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                .main_lower_p {
+                    color: rgba(53, 112, 97, 1.0);
+                    text-decoration: none;
+                    font-family: 'Ubuntu Mono', sans-serif;
+                    font-size: 1.2em;
+                }
+
+            }
             /**             Wrapper for display components             **/
             .wrapper {
                 height: auto;
@@ -416,6 +433,87 @@ body {
                     }
 
                 }
+
+                /**             list wrapper              **/
+                .list_wrapper {
+                    max-height: 500px;
+                    overflow: scroll;
+                    width: 100%;
+                    margin: 15px 0 15px 0;
+                    
+
+                    .list_inner_wrapper {
+                        margin: auto;
+                        height: auto;
+                        width: 90%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        border: 1px solid rgba(180, 180, 180, 0.2);
+                        
+                        .list_item {
+                            margin: 5px 0 10px 0;
+                            padding: 10px;
+                            height: auto;
+                            width: 90%;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                            border-bottom: 1px solid rgba(180, 180, 180, 0.7);
+
+                            .list_item_row {
+                                padding: 15px;
+                                margin: 15px 0 15px 0;
+                                height: auto;
+                                width: 100%;
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                justify-content: center;
+
+                                .list_item_p {
+                                    padding: 5px;
+                                    margin: 0 6xp 0 6px;
+                                    font-family: 'Ubuntu Mono', monospace;
+                                    font-size: 1.1em;
+                                    font-weight: 200;
+                                    text-align: center;
+                                    color: rgba(29, 29, 29, 0.8);
+
+
+                                    .upper_p_span {
+                                        color: rgba(53, 112, 97, 1.0);
+                                        font-size: 1.9em;
+                                        border-bottom:  1px solid rgba(180, 180, 180, 0.2);
+                                    }
+
+                                }
+
+                                .list_item_p_lower {
+                                    padding: 5px;
+                                    margin: 0 6xp 0 6px;
+                                    font-family: 'Ubuntu Mono', monospace;
+                                    font-size: 1em;
+                                    font-weight: 200;
+                                    text-align: center;
+                                    color: rgba(29, 29, 29, 0.8);
+
+                                    .lower_p_span {
+                                        color: rgba(53, 112, 97, 1);
+                                        font-size: 1.15em;
+                                    }
+
+                                }
+
+                            }
+
+                        }
+
+                    }
+                }
+
             }
         }
 

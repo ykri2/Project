@@ -41,15 +41,14 @@ class BarChart extends React.Component {
         const margin = { top: 10, right: 30, bottom: 30, left: 40 };
         const width = (w - margin.left) - margin.right;
         const height = (h - margin.top) - margin.bottom;
-        
-        console.log(data)
+
     
         let subgroups = bars;
         let groups = d3.map(data, (d) => { 
             return(d.dato)
         }).keys()
 
-        // Reset the svg element to a empty state.
+        
         this.svg.innerHTML = '';
 
         const svg = d3.select(this.svg).append("g")

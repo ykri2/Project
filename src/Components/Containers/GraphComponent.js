@@ -1,8 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-import BarGraph from './Graph/BarChart';
-import { getSumYears } from '../resources/summarizeYear';
+import BarGraph from '../Graph/BarChart';
+import { getSumYears } from '../../resources/summarizeYear';
 
 /** 
  * Graph component 
@@ -42,13 +41,11 @@ class GraphComponent extends React.Component {
 
 
     render() {
-
+      const all_data_length = this.state.all_data.length - 1;
       const downpayments = this.state.current_data;
       const disable_btn = this.state.disable_btn;
       const pivot = this.state.pivot;
-
-      console.log(downpayments)
-
+      
       return (
         <div className="graph_wrapper">
             <div className="main_button_row"> 
@@ -64,14 +61,14 @@ class GraphComponent extends React.Component {
             </div>
             <BarGraph  w={450} h={400} d={downpayments} yaxis_label={this.state.currYlabel} xaxis_label={this.state.currXlabel} bars={this.state.current_bars} />
             <div className="main_button_row"> 
-              <button className="main_upper_btn" disabled={ downpayments !== undefined ? false 
-                : pivot <= (downpayments.length - 1)
+              <button className="main_upper_btn" disabled={ downpayments === undefined ? true 
+                : pivot <= downpayments.length || pivot <= 4 ? true : false
                 
                 } onClick={this.goBackward.bind(this)}> 
                   <p> {'<---'} </p>
               </button>
-              <button className="main_upper_btn" disabled={ downpayments !== undefined ? false 
-                : pivot >= (this.state.all_data.length - 1)
+              <button className="main_upper_btn" disabled={ downpayments === undefined ? true 
+                : pivot >= all_data_length ? true : false
                 
                 } onClick={this.goForward.bind(this)}> 
                   <p> {'--->'} </p>
@@ -90,6 +87,7 @@ class GraphComponent extends React.Component {
         current_bars: new_current_bars,
         currXlabel: 'DATO',
         disable_btn: 1,
+        pivot: 9,
         all_data: all_data,
         current_data: all_data.slice(0, 9)
       })
@@ -104,6 +102,7 @@ class GraphComponent extends React.Component {
         current_bars: new_current_bars,
         currXlabel: 'DATO',
         disable_btn: 2,
+        pivot: 9,
         all_data: all_data,
         current_data: all_data.slice(0, 9)
       })
@@ -130,10 +129,8 @@ class GraphComponent extends React.Component {
       const all_data = this.state.all_data;
       const currXlabel = this.state.currXlabel;
       let pivot = this.state.pivot;
-
       if(currXlabel === "AAR") {
-        pivot = pivot + 4;
-
+        pivot = pivot + 4
         if(pivot > all_data.length - 1) {
           this.setState({
             current_data: all_data.slice(((all_data.length - 1) - 4), all_data.length - 1),
@@ -147,7 +144,6 @@ class GraphComponent extends React.Component {
         }
       } else {
         pivot = pivot + 9;
-
         if(pivot > all_data.length - 1) {
           this.setState({
             current_data: all_data.slice(((all_data.length - 1) - 9), all_data.length - 1),
@@ -164,15 +160,14 @@ class GraphComponent extends React.Component {
     }
 
     goBackward() {
-
+      const lowest = this.state.current_data.length;
       const all_data = this.state.all_data;
       const currXlabel = this.state.currXlabel;
       let pivot = this.state.pivot;
 
       if(currXlabel === "AAR") {
         pivot = pivot - 4;
-
-        if(pivot <= 0) {
+        if(pivot <= lowest) {
           this.setState({
             current_data: all_data.slice(0, 4),
             pivot: 4
@@ -185,8 +180,7 @@ class GraphComponent extends React.Component {
         }
       } else {
         pivot = pivot - 9;
-
-        if(pivot <= 0) {
+        if(pivot < lowest) {
           this.setState({
             current_data: all_data.slice(0, 9),
             pivot: 9

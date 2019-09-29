@@ -37,7 +37,6 @@ class FormComponent extends React.Component {
     inputValidation(req) {
         const { errors, isValid } = validateFormInput(req);
         if(!isValid) {
-            console.log(errors)
             this.setState({ errors })
         } else {
             return isValid
@@ -61,7 +60,7 @@ class FormComponent extends React.Component {
 
     getLastPaymentDate(saldoDato, years) {
         let tempDate = new Date(saldoDato)
-        let newDate = this.incrementDate(tempDate, "YEAR", 10, years)
+        let newDate = this.incrementDate(tempDate, "YEAR", years)
         return this.addSeperator(newDate.toISOString().slice(0,10).replace(/-/g,""));
     }
 
@@ -87,18 +86,18 @@ class FormComponent extends React.Component {
     }
 
     sendForm() {
+  
         const request = {
             laanebelop: Number(this.state.laanebelop),
             nominellRente: this.state.nominellRente,
             terminGebyr: this.state.terminGebyr,
-            utlopsDato: this.getLastPaymentDate(this.state.saldoDato, Number(this.state.year)),
+            utlopsDato: this.getLastPaymentDate(this.state.saldoDato, Number(this.state.years)),
             saldoDato: this.state.saldoDato,
             datoForsteInnbetaling: this.getNextPaymentDate(this.state.saldoDato, 1),
             ukjentVerdi: this.state.ukjentVerdi
         }
-
+        
         if(this.inputValidation(request)) {
-            console.log(request)
             this.props.sendRequest(request)
         } else {
             console.log("Invalid object")

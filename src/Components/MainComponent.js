@@ -5,12 +5,13 @@ import PropTypes from 'prop-types';
 
 import { ActionOne } from '../Actions/ActionOne';
 
-import TableComponent from './TableComponent';
+import TableComponent from './Containers/TableComponent';
 import FormComponent from './FormComponent';
-import GraphComponent from './GraphComponent';
+import GraphComponent from './Containers/GraphComponent';
 
 /* eslint import/no-webpack-loader-syntax: off */
-import GridLoader from '-!react-svg-loader!../resources/grid.svg';
+import Loader from '-!react-svg-loader!../resources/circles.svg';
+import ListComponent from './Containers/ListComponent';
 
 
 /**
@@ -94,11 +95,9 @@ class MainComponent extends Component {
         <GraphComponent downpayments={downpayments.innbetalinger} />
       )
     }
-    else if(showList === true && (showGraph === false && showList === false)) {
+    else if(showList === true && (showGraph === false && showTable === false)) {
       return (
-        <div>
-          coming soon
-        </div>
+        <ListComponent downpayments={downpayments.innbetalinger} />
       )
     } 
     else {
@@ -113,6 +112,7 @@ class MainComponent extends Component {
 
 
     const downpayments = this.props.contents.nedbetalingsplan;
+    const isLoading = this.props.loading;
 
     return (
         <div className="main_component">
@@ -146,9 +146,18 @@ class MainComponent extends Component {
               
               <div className="main_lower_div">
                 { 
-                  downpayments === undefined 
+                  downpayments === undefined
                       ? 
-                      <p className="main_lower_p"> Response </p> 
+                      
+                      isLoading !== true ?
+                        <div className="main_lower_empty_wrapper">
+                          <p className="main_lower_p" >Response</p>
+                        </div> 
+                      :
+                      <div className="loading_svg_container">
+                        <Loader fill="#91baa4" />
+                      </div>
+                      
                       :
                         <div className="wrapper">
                         
@@ -191,7 +200,7 @@ MainComponent.defaultProps = {
 function mapStateToProps(state, props) {
   return {
     contents: state.ReducerOne.contents,
-    loading: state.ReducerOne.loading
+    loading: state.ReducerOne.fetching
   };
 }
 
