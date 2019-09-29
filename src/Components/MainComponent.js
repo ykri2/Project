@@ -8,10 +8,11 @@ import { ActionOne } from '../Actions/ActionOne';
 import TableComponent from './Containers/TableComponent';
 import FormComponent from './FormComponent';
 import GraphComponent from './Containers/GraphComponent';
+import ListComponent from './Containers/ListComponent';
 
 /* eslint import/no-webpack-loader-syntax: off */
 import Loader from '-!react-svg-loader!../resources/circles.svg';
-import ListComponent from './Containers/ListComponent';
+import Moneytree from '-!react-svg-loader!../resources/tree.svg';
 
 
 /**
@@ -120,7 +121,7 @@ class MainComponent extends Component {
               <div className="main_upper_div">
                 <div className="main_button_row">
                   <div className="main_upper_btn" onClick={this.openFormComponent.bind(this)}> 
-                    <p> { this.state.showForm !== false ? "LUKKE SKJEMA" : "ÅPNE SKJEMA" } </p>
+                    <p> { this.state.showForm !== false ? "LUKKE LÅNESKJEMA" : "ÅPNE LÅNESKJEMA" } </p>
                   </div>
                 </div>
 
@@ -147,11 +148,13 @@ class MainComponent extends Component {
               <div className="main_lower_div">
                 { 
                   downpayments === undefined
-                      ? 
+                      ?
                       
                       isLoading !== true ?
                         <div className="main_lower_empty_wrapper">
-                          <p className="main_lower_p" >Response</p>
+                          <div className="moneytree_wrapper">
+                            <Moneytree className="moneytree" width="140px" height="140px" />
+                          </div>
                         </div> 
                       :
                       <div className="loading_svg_container">

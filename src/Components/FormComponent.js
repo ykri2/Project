@@ -118,7 +118,7 @@ class FormComponent extends React.Component {
         return (
             <div className='form_component'>
                 <form className="form">
-                    <h1 className="form_header" > Drømmen starter her, Forbrukslån! </h1>
+                    <h1 className="form_header" > Se hva du kan få her! </h1>
                         
                     <div className="form_row" >
                         <FormInputRegular

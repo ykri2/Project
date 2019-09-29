@@ -19,7 +19,7 @@ class FooterComponent extends React.Component {
     render() {
         return (
             <div className='footer_component'>
-               <p className="footer_text" >Yngve</p>
+                    <p className="footer_text" >Yngve</p>
             </div>
         )
     }
