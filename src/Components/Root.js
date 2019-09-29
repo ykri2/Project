@@ -14,7 +14,7 @@ import MainComponent from './MainComponent';
 const Root = ({ store }) => (
       
       <Provider store={store} >
-        <Router basename="/"  >
+        <Router basename="/Project/"  >
               <Switch>
                   <App >
                     <Route exact path="/" component={() => { console.log("A");  return <MainComponent /> } } />
