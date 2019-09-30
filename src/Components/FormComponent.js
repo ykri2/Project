@@ -20,7 +20,7 @@ class FormComponent extends React.Component {
             years: 0,
             saldoDato: "",
 
-            nominellRente: 3,
+            nominellRente: this.props.nrente,
             terminGebyr: 30,
             utlopsDato: "",
             datoForsteInnbetaling: "",
@@ -118,7 +118,7 @@ class FormComponent extends React.Component {
         return (
             <div className='form_component'>
                 <form className="form">
-                    <h1 className="form_header" > Se hva du kan få her! </h1>
+                    <h1 className="form_header" > Søk og utforsk ditt lån </h1>
                         
                     <div className="form_row" >
                         <FormInputRegular

@@ -24,7 +24,7 @@ class HeaderComponent extends React.Component {
                <div className="header_infobox">
                     <p className="ht" >Stacc'in Cash</p>
      
-                    <p className="ht_small" >Forbrukslån for folk flest!</p>
+                    <p className="ht_small" >Utforsk din nedbetalingsplan!</p>
                 </div>
             </div>
         )

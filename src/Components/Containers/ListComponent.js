@@ -29,8 +29,7 @@ class ListComponent extends React.Component {
     render() {
 
         const downpayments = this.props.downpayments;
-        console.log("in list item")
-        console.log(downpayments)
+
         return (
             <div className='list_wrapper'>
                 <div className="list_inner_wrapper">

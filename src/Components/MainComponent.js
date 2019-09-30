@@ -31,6 +31,9 @@ class MainComponent extends Component {
 
 
       current_req: {},
+      typeOfLoan: undefined,
+      loanSelected: false,
+      nrente: 3,
 
     }
 
@@ -108,16 +111,49 @@ class MainComponent extends Component {
     }
   }
 
+  selectBolig() {
+    this.setState({
+      typeOfLoan: "BOLIG",
+      loanSelected: true,
+      nrente: 3,
+
+    })
+  }
+
+  selectForbruks() {
+    this.setState({
+      typeOfLoan: "FORBURKS",
+      loanSelected: true,
+      nrente: 12
+    })
+  }
 
   render() {
 
-
+    const typeOfLoan = this.state.typeOfLoan;
+    const loanSelected = this.state.loanSelected;
+    const nrente = this.state.nrente;
     const downpayments = this.props.contents.nedbetalingsplan;
     const isLoading = this.props.loading;
 
+
+      
     return (
         <div className="main_component">
-            
+            { loanSelected === false 
+              ?
+              <div className="main_upper_div">
+                <div className="main_button_row">
+                  <div className="main_type_btn" id="type_btn_one" onClick={this.selectBolig.bind(this)}> 
+                    <p> BOLIGLÅN </p>
+                  </div>
+                  <div className="main_type_btn" id="type_btn_two" onClick={this.selectForbruks.bind(this)}> 
+                    <p> FORBRUKSLÅN </p>
+                  </div>
+                </div>
+
+              </div>
+              :
               <div className="main_upper_div">
                 <div className="main_button_row">
                   <div className="main_upper_btn" onClick={this.openFormComponent.bind(this)}> 
@@ -139,12 +175,12 @@ class MainComponent extends Component {
                     </button>
                   </div>
                   :
-                  <FormComponent sendRequest={this.sendRequest.bind(this)} /> 
+                  <FormComponent sendRequest={this.sendRequest.bind(this)} nrente={nrente} /> 
                 }
                 
               </div>
               
-              
+            }
               <div className="main_lower_div">
                 { 
                   downpayments === undefined

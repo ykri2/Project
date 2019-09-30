@@ -1,7 +1,7 @@
 import 'whatwg-fetch';
 
 export function ActionOne(object){
-	console.log(object);
+
 
 	return function(dispatch){
 

@@ -34,7 +34,6 @@ export const getSumYears = (data, callback) => {
         return year_obj;
     })
 
-    console.log(years)
 
     return callback(years)
 

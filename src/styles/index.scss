@@ -107,6 +107,59 @@ body {
                 flex-direction: row;
                 align-items: center;
                 justify-content: center;
+
+
+                .main_type_btn {
+                    margin: 15px 5px 15px 5px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    width: 45%;
+                    height: 200px;
+                    border: transparent;
+                    border-radius: 2.5px;
+                    box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.11), 0 5px 15px 0 rgba(0, 0, 0, 0.08);
+                    box-sizing: border-box;
+                    cursor: pointer;
+
+                    p {
+                        text-align: center;
+                        color: #FFFFFF;
+                        text-decoration: none;
+                        font-family: 'Ubuntu Mono', monospace;
+                        font-size: 1.2em;
+                    }
+
+                }
+                
+                #type_btn_one {
+                    background-color:  rgba(96, 177, 157, 0.9);
+                }
+                #type_btn_two {
+                    background-color:  rgba(59, 127, 110, 0.9);
+                }
+
+                #type_btn_one:hover {
+                    background-color: #FFFFFF;
+                    
+                    p {
+                        color: rgba(53, 112, 97, 0.9);
+                        font-size: 1.3em;
+                    }
+
+                }
+                #type_btn_two:hover {
+                    background-color: #FFFFFF;
+                    
+                    p {
+                        color: rgba(53, 112, 97, 0.9);
+                        font-size: 1.3em;
+                    }
+
+                }
+
+
                 
                 /**             Btn             **/
                 .main_upper_btn {
@@ -210,14 +263,14 @@ body {
                                 color: rgb(246, 232, 232);
                             }
                             .form_input {
-                                width: 80%;
-                                height: 50px;
+                                width: 75%;
+                                height: 45px;
                                 text-align: center;
                                 
                             }
                             .form_input_date {
-                                width: 80%;
-                                height: 50px;
+                                width: 75%;
+                                height: 45px;
                                 text-align: center;
                                 
                             }
